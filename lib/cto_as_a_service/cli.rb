@@ -46,13 +46,10 @@ module CtoAsAService
             help      Show this message
 
           Quick Start:
-            1. Install Ollama: https://ollama.com
-            2. Login to GitHub: gh auth login
-            3. In your repo:
-               cp ~/code/snowbee/cto-as-a-service/.cto-as-a-service.yaml ./
-               cp ~/code/snowbee/cto-as-a-service/COMMIT_RULES.md.example ./.cto-as-a-service-RULES.md
-            4. Run: cto-as-a-service install
-            5. Run: cto-as-a-service doctor
+            1. Install Ollama + gh CLI
+            2. gh auth login
+            3. cd your-repo
+            4. cto-as-a-service install
         HELP
       else
         puts "Unknown command: #{command}"

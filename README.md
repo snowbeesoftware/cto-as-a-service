@@ -10,7 +10,7 @@ CTO-as-a-service sits between your git workflow and GitHub, reviewing each commi
 
 - Ruby 2.6+
 - [Ollama](https://ollama.com) running locally with a model installed
-- GitHub personal access token (for posting comments)
+- [GitHub CLI](https://cli.github.com) (`gh`) for authentication
 
 ## Installation
 
@@ -32,15 +32,14 @@ ollama list                    # See available models
 ollama pull llama3.2          # or your preferred model
 ```
 
-### 2. Create a GitHub token
-
-Create a personal access token at: https://github.com/settings/tokens
-
-Required scope: `repo` (for public repos, `public_repo` is sufficient)
+### 2. Login to GitHub CLI
 
 ```bash
-export GITHUB_TOKEN="your-token-here"
+# Install gh if needed: brew install gh
+gh auth login
 ```
+
+This authenticates with GitHub once. The tool uses `gh auth token` to get your token automatically.
 
 ### 3. Configure your repo
 
@@ -107,13 +106,12 @@ llm:
   endpoint: "http://localhost:11434/api/generate"
   model: "llama3.2"
 
-github:
-  token_env_var: "GITHUB_TOKEN"
-
 rules_files:
   - ".cto-as-a-service-RULES.md"
   - ".docs/guidelines.md"
 ```
+
+Note: GitHub authentication is handled automatically via `gh auth token`. No token configuration needed.
 
 ## Rules Files
 
@@ -149,6 +147,6 @@ ollama pull <model-name>
 Run `cto-as-a-service doctor` to check:
 - Ruby version
 - Config file validity
-- GitHub token
+- GitHub CLI (`gh`) authentication
 - Ollama connectivity
 - Model availability
