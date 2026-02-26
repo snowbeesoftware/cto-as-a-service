@@ -1,0 +1,22 @@
+# CTO-as-a-Service Configuration
+# Copy this file to .cto-as-a-service.yaml in your repo root
+
+llm:
+  # Ollama API endpoint
+  endpoint: "http://localhost:11434/api/generate"
+  
+  # Model name (must be installed in Ollama)
+  # Run `ollama list` to see available models
+  model: "llama3.2"
+
+github:
+  # Environment variable name that holds your GitHub token
+  token_env_var: "GITHUB_TOKEN"
+
+# Explicit list of rules files to read
+# The tool will NOT auto-discover files - you must list them explicitly
+rules_files:
+  - ".cto-as-a-service-RULES.md"
+  # Add more files here as needed:
+  # - ".docs/guidelines.md"
+  # - "docs/commit-standards.md"

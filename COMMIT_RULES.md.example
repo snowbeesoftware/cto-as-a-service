@@ -1,0 +1,33 @@
+# CTO-as-a-Service Commit Rules
+
+This file contains the rules that the CTO-as-a-service tool uses to analyze commits.
+
+## General Guidelines
+
+- Commits should be focused and atomic
+- Commit messages should be clear and descriptive
+- Follow the project's coding standards
+
+## Commit Message Rules
+
+1. **Subject line** should be:
+   - Max 50 characters
+   - Start with a verb in imperative mood (e.g., "Add", "Fix", "Update")
+   - No period at the end
+
+2. **Body** (if present) should:
+   - Wrap at 72 characters
+   - Explain "what" and "why", not "how"
+   - Reference issue numbers if applicable
+
+## Code Quality Rules
+
+1. **No TODO comments left behind** - All TODO/FIXME comments must have an associated issue number
+2. **No debug code** - Remove console.log, print statements, etc.
+3. **No secrets** - Never commit API keys, tokens, or credentials
+4. **Tests** - Include tests for new functionality
+5. **Types** - Ensure proper typing in TypeScript/JavaScript code
+
+## Project-Specific Rules
+
+(Specific rules for this repo can be added below)
